@@ -61,3 +61,23 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 =======
 # ticketing-app
 >>>>>>> e9072206a69a40424662d9e8320a6df5316984de
+- composer install
+- npm install
+- npm run dev
+- copy .env.example .env
+- sesuaikan .env & database
+- php artisan storage:link
+- php artisan key:generate
+- php artisan migrate:fresh
+- php artisan db:seed
+- php artisan serve
+  composer install
+  npm i
+  npm run dev
+  file .env
+
+ubah bagian sqlite jadi mysql dan bawahnya tanda # dihapus
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan serve
