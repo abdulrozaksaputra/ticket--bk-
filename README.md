@@ -61,16 +61,16 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 =======
 # ticketing-app
 >>>>>>> e9072206a69a40424662d9e8320a6df5316984de
-- composer install
-- npm install
-- npm run dev
-- copy .env.example .env
-- sesuaikan .env & database
-- php artisan storage:link
-- php artisan key:generate
-- php artisan migrate:fresh
-- php artisan db:seed
-- php artisan serve
+composer install
+npm install
+npm run dev
+copy .env.example .env
+sesuaikan .env & database
+php artisan storage:link
+php artisan key:generate
+php artisan migrate:fresh
+php artisan db:seed
+php artisan serve
   composer install
   npm i
   npm run dev
@@ -81,3 +81,97 @@ php artisan key:generate
 php artisan migrate
 php artisan db:seed
 php artisan serve
+
+# Panduan Awal Menjalankan Project (MySQL)
+
+Ikuti urutan langkah ini untuk setup project dari awal:
+
+### 1. Persiapan Folder & Library
+```powershell
+# Masuk ke folder project
+cd C:\Users\LENOVO\Downloads\ticket--bk--master
+
+# Instal library pendukung
+composer install
+npm install
+```
+
+### 2. Konfigurasi Database (MySQL)
+1.  **Edit `.env`**:
+    ```text
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=tiketyty
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+2.  **Buat Database Manual**:
+    - Buka **phpMyAdmin** (http://localhost/phpmyadmin).
+    - Klik **New** -> Masukkan nama **`tiketyty`** -> Klik **Create**.
+
+### 3. Setup Aplikasi & Data
+```powershell
+# Generate key keamanan
+php artisan key:generate
+
+# Migrasi tabel dan isi data awal (Fresh)
+php artisan migrate:fresh --seed
+
+# Build asset tampilan
+npm run build
+```
+
+### 4. Menjalankan Server
+Buka dua terminal:
+- **Terminal 1**: `php artisan serve`
+- **Terminal 2**: `npm run dev`
+
+Berikut adalah Ringkasan Langkah Awal yang paling benar untuk project Anda (menggunakan MySQL):
+
+1. Masuk ke Folder Project
+Buka terminal dan pastikan Anda sudah berada di: cd C:\Users\LENOVO\Downloads\ticket--bk--master
+
+2. Instalasi Library (Hanya sekali di awal)
+powershell
+composer install
+npm install
+3. Konfigurasi Database (.env)
+Buka file .env dan pastikan settingnya seperti ini:
+
+DB_CONNECTION=mysql
+DB_DATABASE=tiketyty
+4. Buat Database di phpMyAdmin (Penting!)
+Buka http://localhost/phpmyadmin.
+Klik New -> Beri nama tiketyty -> Klik Create.
+5. Setup Data & Asset
+powershell
+php artisan key:generate
+php artisan migrate:fresh --seed
+npm run build
+
+### 5. Push ke GitHub
+Jika Anda ingin mengunggah (push) project ini ke repository GitHub Anda (`ticket--bk-`):
+
+```powershell
+# 1. Hubungkan ke repository baru (Ganti remote)
+git remote set-url origin https://github.com/abdulrozaksaputra/ticket--bk-.git
+
+# 2. Tandai semua perubahan
+git add .
+
+# 3. Buat catatan perubahan (Commit)
+git commit -m "Update project: Setup MySQL dan perbaikan gambar"
+
+# 4. Pastikan branch utama bernama 'main'
+git branch -M main
+
+# 5. Kirim ke GitHub
+git push -u origin main
+```
+
+6. Jalankan Server
+Gunakan dua terminal:
+
+Terminal 1: php artisan serve
+Terminal 2: npm run dev
