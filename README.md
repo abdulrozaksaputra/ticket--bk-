@@ -175,3 +175,17 @@ Gunakan dua terminal:
 
 Terminal 1: php artisan serve
 Terminal 2: npm run dev
+
+
+Saya sudah memperbaiki masalah gambar! Berikut langkah-langkah yang sudah saya lakukan:
+
+✅ Masalah Teridentifikasi
+Gambar tidak muncul karena file seeder menggunakan nama file yang tidak ada (konser_rock.jpg, pameran_seni.jpg, festival_makanan.jpg), padahal file yang sebenarnya ada adalah 1769347703.jpg, 1769347813.jpg, 1769347846.jpg.
+
+✅ Solusi yang Diterapkan
+Update EventSeeder.php - Mengubah nama file gambar menjadi file yang benar-benar ada
+Reset Database - Menjalankan php artisan migrate:fresh --seed untuk memperbarui data
+🎯 Langkah Selanjutnya untuk Anda
+Refresh browser Anda (tekan F5 atau Ctrl+R) di halaman http://127.0.0.1:8000 - gambar sekarang seharusnya sudah muncul!
+
+Silakan cek dan beri tahu saya jika gambar sudah muncul dengan benar.
